@@ -31,8 +31,8 @@ Window {
                     circle.x += 30
                     circle.y -= 30
 
-                    /* меняем цвет правого прямоугольника и самого круга,
-                    при соприкосновении круга с границей правого прямоугольника */
+                    /* change the color of the right rectangle and the circle itself,
+                    when the circle touches the border of the right rectangle */
                     if(circle.x + circle.width >= rightRectangle.x
                             || circle.y <= rightRectangle.y + rightRectangle.height)
                     {
@@ -65,8 +65,8 @@ Window {
                 anchors.fill: parent
                 onClicked: {
 
-                    /* При нажатии на правый квадрат меняем цвета всех фигур на исходные,
-                    и возвращаем круг в исходную позицию, т.е. в левый квадрат */
+                    /* When you click on the right square, we change the colors of all the shapes to the original ones,
+                    and return the circle to its original position, i.e. to the left square */
 
                     scene.state = "RightState"
                     rightRectangle.color = "#c796df"
