@@ -7,10 +7,14 @@ Window {
     visible: true
     title: "Animation"
 
+    property string lState: "LeftState"
+    property string rState: "RightState"
+    property string cState: "CurrentState"
+
     Rectangle {
         id: scene
         anchors.fill: parent
-        state: "LeftState"
+        state: lState
 
 
         Rectangle {
@@ -91,9 +95,10 @@ Window {
 
         }
 
+
         states: [
             State {
-                name: "LeftState"
+                name: lState
                 PropertyChanges {
                     target: circle
                     x: leftRectangle.x+5
@@ -102,7 +107,7 @@ Window {
             },
 
             State {
-                name: "CurrentState"
+                name: cState
                 PropertyChanges {
                     target: circle
                     x: circle.x
@@ -111,7 +116,7 @@ Window {
             },
 
             State {
-                name: "RightState"
+                name: rState
                 PropertyChanges {
                     target: circle
                     x: leftRectangle.x+5
@@ -123,8 +128,8 @@ Window {
 
         transitions:
             Transition {
-                from: "CurrentState"
-                to: "RightState"
+                from: cState
+                to: rState
                 NumberAnimation {
                     properties: "x,y"
                     duration: 1000
