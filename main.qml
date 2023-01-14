@@ -44,11 +44,11 @@ Window {
                         leftRectangle.color = "#c796df"
                         circle.color = "#851ba2"
                         circle.border.color = "black"
-                        scene.state = "RightState"
+                        scene.state = rState
 
                     }
 
-                    else scene.state = "CurrentState"
+                    else scene.state = cState
                 }
             }
         }
@@ -72,7 +72,7 @@ Window {
                     /* When you click on the right square, we change the colors of all the shapes to the original ones,
                     and return the circle to its original position, i.e. to the left square */
 
-                    scene.state = "RightState"
+                    scene.state = rState
                     rightRectangle.color = "#c796df"
                     leftRectangle.color = "lightblue"
                     circle.color = "#d42aff"
